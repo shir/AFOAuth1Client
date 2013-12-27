@@ -351,7 +351,7 @@ static inline NSString * AFHMACSHA1Signature(NSURLRequest *request, NSString *co
 {
     NSMutableURLRequest *request = [super requestWithMethod:method path:path parameters:parameters];
     [request setValue:[self authorizationHeaderForMethod:method path:path parameters:parameters] forHTTPHeaderField:@"Authorization"];
-    [request setHTTPShouldHandleCookies:NO];
+    [request setHTTPShouldHandleCookies:self.HTTPShouldHandleCookies];
     
     return request;
 }
@@ -365,7 +365,7 @@ static inline NSString * AFHMACSHA1Signature(NSURLRequest *request, NSString *co
 
     if (!self.isDisabledMultipartDataInOauth) {
         [request setValue:[self authorizationHeaderForMethod:method path:path parameters:parameters] forHTTPHeaderField:@"Authorization"];
-        [request setHTTPShouldHandleCookies:NO];
+        [request setHTTPShouldHandleCookies:self.HTTPShouldHandleCookies];
     }
 
     return request;

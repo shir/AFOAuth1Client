@@ -64,6 +64,11 @@ typedef enum {
  */
 @property (nonatomic, assign, getter = isDisabledMultipartDataInOauth) BOOL disableMultipartDataInOauth;
 
+/**
+ 
+ */
+@property (nonatomic, assign) BOOL HTTPShouldHandleCookies;
+
 ///---------------------
 /// @name Initialization
 ///---------------------
